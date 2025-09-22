@@ -6,8 +6,8 @@
 2. Realice un fork de este repositorio en su cuenta de GitHub.
 3. Desarrolle el proyecto utilizando Next.js.
 4. Estilice el proyecto con Tailwind CSS, salvo que sea estrictamente necesario aplicar estilos en CSS puro para un caso particular.
-5. Genere un release **ANTES** de finalizar la clase.
-6. Envíe la URL del repositorio a través de BloqueNeón.
+5. Genere un release **ANTES** de las 6:30 pm del 23 de Septiembre del 2025 (Release que no se haya generado dentro de esta franaja de horario y día indicado no será tenido en cuenta en la calificación final).
+6. Envíe la URL del repositorio a través de BloqueNeón (**ASEGURESE** que el repositorio sea **público**).
 
 ## Descripción
 
