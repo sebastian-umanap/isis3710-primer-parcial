@@ -11,13 +11,13 @@
 
 ## Descripción
 
-Se solicita el desarrollo de una demo de una Pokédex correspondiente a la primera generación de Pokémon. El objetivo es crear un MVP de la aplicación, priorizando el diseño y la parte gráfica.
+Su equipo de desarrollo ha recibido la solicitud de un cliente para crear un demo de una Pokédex, una aplicación que permite consultar información sobre los Pokémon de la primera generación. El cliente requiere que este demo funcione como un MVP, con un enfoque en el diseño visual y la experiencia gráfica.
 Para esta demo, se deben implementar dos pantallas principales:
 
-* Home: Listado de Pokémon.
-* Detalle: Información individual de cada Pokémon.
+* Home: Muestra un listado de los Pokémon disponibles.
+* Detalle: Presenta información individual de cada Pokémon, incluyendo datos relevantes como altura, peso, habilidades y tipos.
 
-La aplicación debe construirse tomando como base el proyecto disponible en este repositorio.
+La aplicación debe construirse tomando cómo base el proyecto disponible en este repositorio.
 
 ## 1. Preparcial (20%)
 
@@ -144,7 +144,7 @@ Al hacer clic en un Pokémon de la lista en la página de inicio, se debe mostra
 
 * Altura (en centímetros)
 * Peso (en kilogramos)
-* Listado de habilidades
+* Listado de habilidades (mínimo 1)
 * Tipos del Pokémon. 
 
 Para obtener la información del Pokémon, se utiliza el endpoint `https://pokeapi.co/api/v2/pokemon/<idPoke>`, donde `<idPoke>` corresponde al número de la Pokédex del Pokémon. La pantalla se debe ver idéntica al siguiente mockup:
