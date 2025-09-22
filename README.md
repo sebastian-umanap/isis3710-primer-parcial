@@ -48,7 +48,7 @@ El layout debe tener la siguiente estructura:
 De acuerdo con esta estructura, deben crear un componente en `src/components` tanto para el Header como para el Footer. Al basarse en este layout, se deben tener en cuenta varios aspectos:
 1. Este layout debe estar presente tanto en el Home cómo en el Detalle
 2. Los componentes de Header y Footer deben tener las etiquetas de HTML5 correspondientes a estas secciones
-3. El componente de Header debe tener de manera centrada el logo de Pokémon.
+3. El componente de Header debe tener de manera centrada el logo de Pokémon **el cual debe estar enlazado al Home del proyecto**.
 4. El componente de Footer debe tener los legales que aparecen en el mockup del Home.
 5. Deben agregar los metadatos de título y descripción en las dos páginas:
     * Home: 
