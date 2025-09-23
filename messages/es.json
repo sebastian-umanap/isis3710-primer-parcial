@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "Hola mundo!"
+  },
+  "DetailPage": {
+    "detail": "- Detalle del Pokemon"
   }
 }
