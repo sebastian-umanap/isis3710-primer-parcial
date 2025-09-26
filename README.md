@@ -68,7 +68,7 @@ De acuerdo con esta estructura, deben crear un componente en `src/components` ta
 * Colores:
     * Fondo del Header: #E71309
     * Fondo del Footer: #11463B
-    * Fondo del Main: #11463B
+    * Fondo del Main: #D9E9FE
 
 ### P1. Home (40%)
 
