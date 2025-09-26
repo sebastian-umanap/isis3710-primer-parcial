@@ -1,8 +1,15 @@
 import {useTranslations} from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import PokemonList from './components/PokemonList';
 import type { Metadata } from 'next';
 
-
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Meta.Home');
+  return {
+    title: t('title'),      
+    description: t('desc'),
+  };
+}
 
 export default function Home() {
   const t = useTranslations('HomePage');

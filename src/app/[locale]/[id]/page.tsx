@@ -1,33 +1,37 @@
-import {Metadata} from 'next';
-import {getTranslations} from 'next-intl/server';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 import PokemonDetail from '../components/PokemonDetail';
 
-// 👇 tipa params como Promise y haz await antes de usarlo
 type RouteParams = { locale: string; id: string };
 
 async function getPokemon(id: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, { cache: 'no-store' });
+  if (res.status === 404) return null;
   if (!res.ok) throw new Error('No se pudo cargar el Pokémon');
   return res.json();
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<RouteParams>;
-}): Promise<Metadata> {
-  // Si necesitas algo de params aquí, primero:
-  const { id } = await params; // opcional si no lo usas
+}: { params: Promise<RouteParams> }): Promise<Metadata> {
+  const t = await getTranslations('Meta.Detail');
   return {
-    title: 'Detalle del Pokémon',
-    description: 'detalle del Pokémon seleccionado',
+    title: t('title'),       
+    description: t('desc'), 
   };
 }
 
-export default async function DetailPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
+export default async function DetailPage({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}) {
   const { id } = await params;
   const t = await getTranslations('DetailPage');
   const p = await getPokemon(id);
+
+  if (!p) notFound();
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-8">

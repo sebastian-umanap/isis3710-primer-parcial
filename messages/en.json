@@ -15,6 +15,16 @@
     "appName": "PokeApp",
     "rights": "All rights reserved.",
     "builtFor": "Built for:"
+  },
+    "Meta": {
+    "Home": {
+      "title": "National Pokédex - PokeApp",
+      "desc": "Explore the first-generation Pokédex: a complete list of Pokémon with their main characteristics and details."
+    },
+    "Detail": {
+      "title": "Pokémon Detail - PokeApp",
+      "desc": "View detailed information for each Pokémon: stats, types, abilities and other relevant data from the first generation."
+    }
   }
 
 

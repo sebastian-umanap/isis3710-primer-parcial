@@ -15,7 +15,16 @@
     "appName": "PokeApp",
     "rights": "Todos los derechos reservados.",
     "builtFor": "Desarrollado para:"
+  },
+    "Meta": {
+    "Home": {
+      "title": "Pokedex Nacional - PokeApp",
+      "desc": "Explora la Pokédex de la primera generación: un listado completo de Pokémon con sus características y detalles principales."
+    },
+    "Detail": {
+      "title": "Detalle del Pokémon - PokeApp",
+      "desc": "Consulta información detallada de cada Pokémon: estadísticas, tipos, habilidades y otros datos relevantes de la primera generación."
+    }
   }
-
 
 }
