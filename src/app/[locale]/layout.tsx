@@ -7,10 +7,10 @@ import '../globals.css';
 
 
 
-export const metadata: Metadata = {
-  title: 'PokeApp',
-  description: '',
+export const metadata = {
+  icons: { icon: '/pokeball.svg', shortcut: '/pokeball.svg', apple: '/pokeball.svg' }
 };
+
 
 export default function RootLayout({children}:{children: React.ReactNode}) {
   return (
