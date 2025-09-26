@@ -10,5 +10,12 @@
       "abilities": "Abilities",
       "types": "Types"
     }
+  },
+  "Footer": {
+    "appName": "PokeApp",
+    "rights": "All rights reserved.",
+    "builtFor": "Built for:"
   }
+
+
 }

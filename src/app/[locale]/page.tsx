@@ -1,5 +1,7 @@
 import {useTranslations} from 'next-intl';
 import PokemonList from './components/PokemonList';
+import type { Metadata } from 'next';
+
 
 
 export default function Home() {
