@@ -1,46 +1,6 @@
 'use client';
 import Link from 'next/link';
-
-//Colores del Background para Tailwind
-const BgColorTypes = {
- bug: 'bg-[#a8b820]',
- dark: 'bg-[#705848]',
- dragon: 'bg-[#7038f8]',
- electric: 'bg-[#f8d030]',
- fairy: 'bg-[#f0a6f7]',
-fighting: 'bg-[#c03028]',
- fire: 'bg-[#f08030]',
- flying: 'bg-[#a890f0]',
- ghost: 'bg-[#705898]',
- grass: 'bg-[#78c850]',
- ground: 'bg-[#e0c068]',
- ice: 'bg-[#98d8d8]',
- normal: 'bg-[#a8a878]',
- poison: 'bg-[#a040a0]',
- psychic: 'bg-[#f85888]',
- rock: 'bg-[#b8a038]',
- water: 'bg-[#6890f0]',
- }
- //Colores del Border para Tailwind
- const BorderColorTypes = {
- bug: 'border-[#a8b820]',
- dark: 'border-[#705848]',
- dragon: 'border-[#7038f8]',
- electric: 'border-[#f8d030]',
- fairy: 'border-[#f0a6f7]',
- fighting: 'border-[#c03028]',
- fire: 'border-[#f08030]',
- flying: 'border-[#a890f0]',
- ghost: 'border-[#705898]',
- grass: 'border-[#78c850]',
- ground: 'border-[#e0c068]',
- ice: 'border-[#98d8d8]',
- normal: 'border-[#a8a878]',
- poison: 'border-[#a040a0]',
- psychic: 'border-[#f85888]',
- rock: 'border-[#b8a038]',
- water: 'border-[#6890f0]',
- }
+import { BgColorTypes, BorderColorTypes, getMainTypeName } from '../lib/pokeColors';
 
 type Props = {
   id: number;
@@ -48,21 +8,40 @@ type Props = {
   types: { type: { name: string } }[];
 };
 
-export default function PokemonCard({id, name, types}: Props) {
-  const mainType = types[0]?.type?.name ?? 'normal';
-  const border = BorderColorTypes[mainType as keyof typeof BorderColorTypes];
-  const bg = BgColorTypes[mainType as keyof typeof BgColorTypes];
-  
-  //usar id
+export default function PokemonCard({ id, name, types }: Props) {
+  const mainType = getMainTypeName(types);
+  const border = BorderColorTypes[mainType];
+  const badgeBg = BgColorTypes[mainType];
+
   const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+
   return (
-    <Link href={`/${id}`} className={`block rounded-2xl border-4 ${border} ${bg} p-4`}>
-      <div className="aspect-square relative rounded-xl bg-white/40">
-        <img src={imgUrl} alt={name} className="w-full h-full object-contain" />
-      </div>
-      <div className="mt-3">
-        <h3 className="text-lg font-bold capitalize">{name}</h3>
-        <p className="text-sm opacity-90 capitalize">{mainType}</p>
+    <Link
+      href={`/${id}`}
+      className={`block rounded-2xl border-4 ${border} bg-white shadow-sm hover:shadow-md transition`}
+    >
+      <div className="p-5 flex flex-col items-center">
+        {/* Contenedor de imagen: altura fija responsiva, SIN recortes */}
+        <div className="w-full rounded-xl bg-slate-100 grid place-items-center h-56 sm:h-60 md:h-64">
+          <img
+            src={imgUrl}
+            alt={name}
+            className="max-w-full max-h-full object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Texto siempre visible (color forzado) */}
+        <h3 className="mt-4 text-lg font-bold capitalize text-gray-900 text-center">
+          {name}
+        </h3>
+
+        {/* Badge con tus colores */}
+        <span
+          className={`mt-2 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white ${badgeBg}`}
+        >
+          {mainType}
+        </span>
       </div>
     </Link>
   );
