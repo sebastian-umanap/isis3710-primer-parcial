@@ -3,6 +3,12 @@
     "title": "Pokemon List"
   },
   "DetailPage": {
-    "detail": "- Pokemon's detail"
+    "title": "Pokemon's detail",
+      "labels": {
+      "height": "Height",
+      "weight": "Weight",
+      "abilities": "Abilities",
+      "types": "Types"
+    }
   }
 }

@@ -3,6 +3,12 @@
     "title": "Listado de Pokemons"
   },
   "DetailPage": {
-    "detail": "- Detalle del Pokemon"
+    "title": "Detalle del Pokemon",
+      "labels": {
+      "height": "Altura",
+      "weight": "Peso",
+      "abilities": "Habilidades",
+      "types": "Tipos"
+    }
   }
 }
