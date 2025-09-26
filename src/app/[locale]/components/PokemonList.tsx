@@ -21,9 +21,7 @@ async function getFirst15(): Promise<PokeDetail[]> {
         id: d.id,
         name: d.name,
         types: d.types, 
-      } as PokeDetail;
-    })
-  );
+      } as PokeDetail;}));
 
   return details;
 }
@@ -33,9 +31,7 @@ export default async function PokemonList() {
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {pokemonData.map((p) => (
-        <PokemonCard key={p.id} id={p.id} name={p.name} types={p.types} />
-      ))}
+      {pokemonData.map((p) => (<PokemonCard key={p.id} id={p.id} name={p.name} types={p.types} />))}
     </section>
   );
 }

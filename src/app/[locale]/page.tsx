@@ -1,5 +1,5 @@
-import {useTranslations} from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import {useTranslations} from 'next-intl'; //traducciones por default
+import { getTranslations } from 'next-intl/server'; //evitar problemas con el ASYNC
 import PokemonList from './components/PokemonList';
 import type { Metadata } from 'next';
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server'; //evitar problemas con el ASYNC
 import { notFound } from 'next/navigation';
 import PokemonDetail from '../components/PokemonDetail';
 
